@@ -44,7 +44,7 @@ public class MyPageController {
 		System.out.println(myPageDTO.getUserPw());
 		
 		model.addAttribute("list", myPageDTO);
-		return "/home";
+		return "../views/home";
 	}
 	
 	
