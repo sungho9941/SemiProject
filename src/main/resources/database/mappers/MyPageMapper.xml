@@ -10,7 +10,7 @@
   			select * from member where userid=#{userId} and userpw=#{userPw}
   		</select>
   		
-  		<select id="getList"  resultType="MyPageDTO">
+  		<select id="getList" resultType="MyPageDTO">
   			select * from member
   		</select>
   		<!-- <select id="getDetail" parameterType="myPageDTO">

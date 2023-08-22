@@ -1,5 +1,8 @@
 package com.semi.main.my;
 
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,16 +24,15 @@ public class MyPageController {
 	}
 	
 	@RequestMapping(value = "login", method = RequestMethod.POST) //로그인 테스트용으로 나중에 삭제
-	public String getLogin(MyPageDTO myPageDTO, HttpSession session) throws Exception{
+	public String getLogin(MyPageDTO myPageDTO, HttpSession session, HttpServletRequest request) throws Exception{
 		myPageDTO = myPageService.getLogin(myPageDTO);
 		
-		System.out.println(myPageDTO.getUserId()+"=====");
-		System.out.println(myPageDTO.getUserPw());
-		System.out.println(myPageDTO.getName());	
-		
-		
 		if(myPageDTO != null) {
-			session.setAttribute("my", myPageDTO);
+			session = request.getSession();
+			session.setAttribute("member", myPageDTO);
+			System.out.println(myPageDTO.getUserId()+"---");
+			System.out.println(myPageDTO.getUserPw()+"---");
+			
 		}
 		
 		return "redirect:/";
@@ -38,12 +40,10 @@ public class MyPageController {
 	
 	@RequestMapping(value = "test", method = RequestMethod.GET)
 	public String getList(MyPageDTO myPageDTO, Model model) throws Exception{
-		myPageService.getList(myPageDTO);
-		System.out.println(myPageDTO.getName()+"list");
-		System.out.println(myPageDTO.getUserId());
-		System.out.println(myPageDTO.getUserPw());
-		
-		model.addAttribute("list", myPageDTO);
+		List<MyPageDTO> ar = myPageService.getList(myPageDTO);
+
+
+		model.addAttribute("list", ar);
 		return "../views/home";
 	}
 	
