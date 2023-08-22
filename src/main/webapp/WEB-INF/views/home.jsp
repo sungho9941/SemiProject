@@ -39,5 +39,6 @@
 
 
 <a class="btn btn-primary" href="../my/login">로그인</a>
+<a class="btn btn-primary" href="../my/test">리스트</a>
 </body>
 </html>
