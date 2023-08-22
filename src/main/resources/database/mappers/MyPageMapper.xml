@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ 
+  <mapper namespace="com.semi.main.my.MyPageDAO">
+  		
+  		<select id="getLogin" parameterType="MyPageDTO" resultType="MyPageDTO"><!-- 임시 로그인용으로 만듬 -->
+  			select * from member where userid=#{userId} and userpw=#{userPw}
+  		</select>
+  		
+  		<select id="getList"  resultType="MyPageDTO">
+  			select * from member
+  		</select>
+  		<!-- <select id="getDetail" parameterType="myPageDTO">
+  			select * from member where 
+  		</select> -->
+  </mapper>

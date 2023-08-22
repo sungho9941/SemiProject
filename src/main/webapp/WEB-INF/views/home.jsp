@@ -10,6 +10,7 @@
 	Hello world!   ㅇㅇ
 </h1>
 
-<P>  The time on the server is ${serverTime}. </P>
+<P> ${list}. </P>
+<a class="btn btn-primary" href="../my/login">로그인</a>
 </body>
 </html>
