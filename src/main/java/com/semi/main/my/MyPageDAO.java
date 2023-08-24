@@ -15,6 +15,7 @@ public class MyPageDAO {
 	private final String NAMESPACE="com.semi.main.my.MyPageDAO.";
 	
 	public int setFileJoin(MyPageFileDTO myPageFileDTO) throws Exception{ //회원가입(사진등록)용으로 나중에 삭제
+		System.out.println("dao");
 		return sqlSession.insert(NAMESPACE+"setFileJoin", myPageFileDTO);
 	}
 	

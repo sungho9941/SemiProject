@@ -19,6 +19,7 @@ public class MyPageService {
 	private FileManager fileManager;
 	
 	public int setJoin(MemberDTO memberDTO, MultipartFile multipartFile, HttpSession session) throws Exception{ // 나중에 삭제
+		System.out.println("serv");
 		String path="/resources/upload/member/";
 
 		int result = myPageDAO.setJoin(memberDTO);
@@ -27,7 +28,7 @@ public class MyPageService {
 		String fileName = fileManager.fileSave(path, session, multipartFile);
 		
 		MyPageFileDTO memberFileDTO = new MyPageFileDTO();
-		memberFileDTO.setUserNo(memberDTO.getUserId());
+		memberFileDTO.setUserNo(memberDTO.getUserNo());
 		memberFileDTO.setOriginalFileName(multipartFile.getOriginalFilename());
 		memberFileDTO.setFileName(fileName);
 		result = myPageDAO.setFileJoin(memberFileDTO);

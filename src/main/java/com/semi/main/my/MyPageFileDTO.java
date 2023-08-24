@@ -5,15 +5,17 @@ import com.semi.main.file.FileDTO;
 
 public class MyPageFileDTO extends FileDTO{
 
-	private String userNo;
+	private Long userNo;
 
-	public String getUserNo() {
+	public Long getUserNo() {
 		return userNo;
 	}
 
-	public void setUserNo(String userNo) {
+	public void setUserNo(Long userNo) {
 		this.userNo = userNo;
 	}
+
+	
 
 	
 	

@@ -30,8 +30,10 @@ public class MyPageController {
 	
 	@RequestMapping(value = "join", method = RequestMethod.POST)
 	public String setJoin(MemberDTO memberDTO, MultipartFile pic, HttpSession session) throws Exception{
+		System.out.println("cont");
+		System.out.println(memberDTO);
+		System.out.println(pic);
 		int result = myPageService.setJoin(memberDTO, pic, session);
-		
 		
 		return "redirect:../";
 	}
