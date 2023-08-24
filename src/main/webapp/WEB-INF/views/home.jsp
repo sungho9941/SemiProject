@@ -22,12 +22,11 @@
 		${member.userId} : ${sessionScope.member.name}
 	</p>
 		
-		<a class="btn btn-primary" href="../my/login">로그인</a>
-		
-		<a class="btn btn-primary" href="../my/test">member 리스트</a>
+		<a class="btn btn-primary" href="../my/login">로그인</a><br>
+		<a class="btn btn-primary" href="../my/test">member리스트</a><br>
 		
 		<c:if test="${not empty sessionScope.member}">
-			<a class="btn btn-primary" href="../my/mypage">마이페이지</a>
+			<a class="btn btn-primary" href="../my/mypage">마이페이지</a><br>
 		</c:if>
 		
 		<!-- <thead>
