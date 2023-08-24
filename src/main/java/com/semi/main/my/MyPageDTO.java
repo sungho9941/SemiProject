@@ -13,6 +13,20 @@ public class MyPageDTO {
 	private String address;
 	private String phone;
 	private Date accountDate;
+	private String intro;
+	public String getIntro() {
+		return intro;
+	}
+	public void setIntro(String intro) {
+		this.intro = intro;
+	}
+	public Long getStatusNo() {
+		return statusNo;
+	}
+	public void setStatusNo(Long statusNo) {
+		this.statusNo = statusNo;
+	}
+	private Long statusNo;
 	
 	public Long getUserNo() {
 		return userNo;
