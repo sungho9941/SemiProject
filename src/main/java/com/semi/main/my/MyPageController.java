@@ -19,6 +19,11 @@ public class MyPageController {
 	@Autowired
 	MyPageService myPageService;
 	
+	@GetMapping(value = "join") // 회원가입 테스트용으로 나중에 삭제
+	public void setJoin() throws Exception{
+		
+	}
+	
 	@RequestMapping(value = "login", method = RequestMethod.GET) //로그인 테스트용으로 나중에 삭제
 	public void getLogin() throws Exception{
 		

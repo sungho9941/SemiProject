@@ -36,7 +36,8 @@
 </head>
 <body>    
     <div id="header">
-		<h2>HEADER</h2>
+		<a href="../">header</a><br>
+		
 	</div>
 	
 	<div id="nav">
@@ -52,11 +53,15 @@
 	
 	<div id="section">
 		<p>${sessionScope.member.userId} 님</p>
-		<p>판매횟수</p><p>구매횟수</p>
 		
-		<p>${sessionScope.member.intro}</p>
-		
-		
+		<p>${sessionScope.member.intro}</p>	
+	</div>
+	
+	<div id="section">
+		<p>판매횟수 : </p>
+	</div>
+	<div id="section">
+		<p>구매횟수 : </p>
 	</div>
 	
 	<div id="footer">
