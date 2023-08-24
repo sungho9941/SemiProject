@@ -54,6 +54,11 @@
 	<div id="section">
 		<p>${sessionScope.member.userId} 님</p>
 		
+		<p>
+			<img alt="" src="../resources/upload/member/${member.myPageFileDTO.originalFileName}"> <!-- 원래 fileName -->
+		</p>
+		
+		<p text-align="left">자기소개</p>
 		<p>${sessionScope.member.intro}</p>	
 	</div>
 	

@@ -8,7 +8,9 @@
 
   <configuration>
   	<typeAliases>
-		<typeAlias type="com.semi.main.my.MyPageDTO" alias="MyPageDTO"/>
+		<typeAlias type="com.semi.main.my.MemberDTO" alias="MemberDTO"/>
+  		<typeAlias type="com.semi.main.my.MyPageFileDTO" alias="MyPageFileDTO"/>
+  	
   	
   	</typeAliases>
   </configuration>

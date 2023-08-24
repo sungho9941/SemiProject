@@ -2,7 +2,7 @@ package com.semi.main.my;
 
 import java.sql.Date;
 
-public class MyPageDTO {
+public class MemberDTO {
 
 	private Long userNo;
 	private String userId;
@@ -14,6 +14,14 @@ public class MyPageDTO {
 	private String phone;
 	private Date accountDate;
 	private String intro;
+	private MyPageFileDTO myPageFileDTO;
+	
+	public MyPageFileDTO getMyPageFileDTO() {
+		return myPageFileDTO;
+	}
+	public void setMyPageFileDTO(MyPageFileDTO myPageFileDTO) {
+		this.myPageFileDTO = myPageFileDTO;
+	}
 	public String getIntro() {
 		return intro;
 	}

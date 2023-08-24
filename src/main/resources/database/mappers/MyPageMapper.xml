@@ -6,14 +6,22 @@
  
   <mapper namespace="com.semi.main.my.MyPageDAO">
   		
-  		<select id="getLogin" parameterType="MyPageDTO" resultType="MyPageDTO"><!-- 임시 로그인용으로 만듬 -->
+  		<select id="getLogin" parameterType="MemberDTO" resultType="MemberDTO"><!-- 임시 로그인용으로 나중에 삭제 -->
   			select * from member where userid=#{userId} and userpw=#{userPw}
   		</select>
   		
-  		<select id="getList" resultType="MyPageDTO">
+  		<select id="getList" resultType="MemberDTO"> <!-- 리스트 테스트 출력용으로 나중에 삭제 -->
   			select * from member
   		</select>
-  		<!-- <select id="getDetail" parameterType="myPageDTO">
-  			select * from member where 
-  		</select> -->
+  		
+  		<insert id="setFileJoin" parameterType="MyPageFileDTO"> <!-- 회원가입용으로 나중에 삭제 -->
+  		INSERT INTO PROFILE 
+  		VALUES (PROFILE_SEQ.NEXTVAL, #{userNo}, #{originalFileName}, #{fileName})
+	  	</insert>
+	  
+	  	<insert id="setJoin" parameterType="MemberDTO"> <!-- 회원가입용으로 나중에 삭제 -->
+	  		INSERT INTO MEMBER (USERNO, USERID, USERPW, NAME, EMAIL, BIRTH, ADDRESS, PHONE, ACCOUNTDATE, INTRO, STATUSNO)
+	  		VALUES (MEMBER_SEQ.NEXTVAL, #{userId}, #{userPw}, #{name}, #{email}, #{birth}, #{address}, #{phone}, sysdate, #{intro}, null)
+	  	</insert>
+  
   </mapper>

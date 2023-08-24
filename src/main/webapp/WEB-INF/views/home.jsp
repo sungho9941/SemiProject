@@ -11,15 +11,17 @@
 </h1>
 
 <table class="table table-dark table-hover">
-<c:if test="${not empty sessionScope.member}">
+		<h1>메인 페이지</h1>
+<%-- <c:if test="${not empty sessionScope.member}">
+		
 		<h1>로그인 상태</h1>
 	</c:if>
 	<c:if test="${empty member}">
 	<h1>비로그인 상태</h1>
-	</c:if>
+	</c:if> --%>
 	
 	<p>
-		${member.userId} : ${sessionScope.member.name}
+		${member.userId}<%--  : ${sessionScope.member.name} --%>        님 환영합니다.
 	</p>
 		
 		<a class="btn btn-primary" href="../my/login">로그인(삭제예정)</a><br>
