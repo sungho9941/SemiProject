@@ -70,6 +70,13 @@
 		<p>비밀번호 확인</p>
 		<input type="password" value="${member.userPw}">
 		<br>
+		<p>이메일</p>
+		<input type="email" value="${member.email}">
+		<br>
+		<p>생일</p>
+		<input type="date" value="${member.birth}">
+		<br>
+		
 		
 		<p>자기소개</p>
 		<input type="text" value="${member.intro}">
