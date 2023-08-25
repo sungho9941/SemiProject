@@ -43,8 +43,8 @@
 	<div id="nav">
 		
 		<ul>
-		  <li>정보수정</li><br><br>
-		  <li>내판매글/구매내역</li><br><br>
+		  <li><a href="./update">정보수정</a></li><br><br>
+		  <li><a href="list">내판매글/구매내역</a></li><br><br>
 		  <li>내 찜 목록</li><br><br>
 		  <li>택배조회</li><br><br>
 		  <li>회원탈퇴</li>
@@ -52,14 +52,14 @@
 	</div>
 	
 	<div id="section">
-		<p>${sessionScope.member.userId} 님</p>
+		<p>${member.userId} 님</p>
 		
 		<p>
-			<img alt="" src="../resources/upload/member/${member.myPageFileDTO.originalFileName}"> <!-- 원래 fileName -->
+			<img alt="" src="../resources/upload/member/${member.myPageFileDTO.fileName}"> 
 		</p>
 		
 		<p text-align="left">자기소개</p>
-		<p>${sessionScope.member.intro}</p>	
+		<p>${member.intro}</p>	
 	</div>
 	
 	<div id="section">
@@ -73,5 +73,18 @@
 		<h2>FOOTER</h2>
 	</div>
     
+		<p>zzz</p>
+		
+		<p>
+			<img alt="" src="../resources/upload/member/${member.myPageFileDTO.fileName}"> 
+		</p>
+		
+		<p>
+			<img alt="" src="../resources/upload/member/${member.myPageFileDTO.originalFileName}"> 
+		</p>
+		
+		<p>
+			<img alt="" src="../resources/upload/member/0cb08601-c0a8-4863-b66e-d41349a2cc2d_img1.jpg">
+		</p>
 </body>
 </html>

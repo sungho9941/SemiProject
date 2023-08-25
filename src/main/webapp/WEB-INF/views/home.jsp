@@ -31,7 +31,7 @@
 		<c:if test="${not empty sessionScope.member}">
 			<a class="btn btn-primary" href="../my/mypage">마이페이지</a><br>
 		</c:if>
-		
+		<a class="btn btn-primary" href="../my/mypage">마이페이지</a><br>
 		<!-- <thead>
 			<th>번호</th><th>아디</th><th>비번</th>
 		</thead>

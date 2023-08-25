@@ -18,6 +18,12 @@
 	
 	<form action="./join" method="post" enctype="multipart/form-data" id="frm">
 	<div class="mb-4">
+	 <label for="userNo" class="form-label">id</label>
+ 	 <input type="text" name="userNo" class="form-control" id="userNo" placeholder="id를 입력하세요" hidden>
+	<span id="idx"></span>
+	</div>
+	
+	<div class="mb-4">
 	 <label for="userId" class="form-label">id</label>
  	 <input type="text" name="userId" class="form-control" id="userId" placeholder="id를 입력하세요">
 	<span id="idx"></span>

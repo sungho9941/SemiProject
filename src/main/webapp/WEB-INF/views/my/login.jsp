@@ -20,7 +20,7 @@
 	<form action="./login" method="post">
 	<div class="mb-4">
 	 <label for="id" class="form-label">id</label>
- 	 <input type="text" name="userId" class="form-control" value="ksh1" id="id" placeholder="id를 입력하세요">
+ 	 <input type="text" name="userId" class="form-control" value="ksh3" id="id" placeholder="id를 입력하세요">
 	</div>
 	
 	<div class="mb-4">

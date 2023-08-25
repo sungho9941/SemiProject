@@ -19,21 +19,31 @@ public class MyPageService {
 	private FileManager fileManager;
 	
 	public int setJoin(MemberDTO memberDTO, MultipartFile multipartFile, HttpSession session) throws Exception{ // 나중에 삭제
-		System.out.println("serv");
+		
 		String path="/resources/upload/member/";
-
 		int result = myPageDAO.setJoin(memberDTO);
 		
 		if(!multipartFile.isEmpty()) {
 		String fileName = fileManager.fileSave(path, session, multipartFile);
+		MyPageFileDTO myPageFileDTO = new MyPageFileDTO();
+		myPageFileDTO.setUserNo(memberDTO.getUserNo());
+		myPageFileDTO.setOriginalFileName(multipartFile.getOriginalFilename());
+		myPageFileDTO.setFileName(fileName);
+		result = myPageDAO.setFileJoin(myPageFileDTO);
 		
-		MyPageFileDTO memberFileDTO = new MyPageFileDTO();
-		memberFileDTO.setUserNo(memberDTO.getUserNo());
-		memberFileDTO.setOriginalFileName(multipartFile.getOriginalFilename());
-		memberFileDTO.setFileName(fileName);
-		result = myPageDAO.setFileJoin(memberFileDTO);
+		
+		System.out.println(myPageFileDTO.getUserNo()+"=1");
+		System.out.println(myPageFileDTO.getFileName()+"=2");
+		System.out.println(myPageFileDTO.getOriginalFileName()+"=3");
+		System.out.println(myPageFileDTO.getFileNo()+"=4");
+		System.out.println(memberDTO.getUserNo()+"=5");
+		System.out.println(memberDTO.getName()+"=6");
+		System.out.println(memberDTO.getPhone()+"=7");
+		System.out.println(memberDTO.getUserId()+"=8");
 		
 		}
+		
+		
 		return result;
 	}
 	

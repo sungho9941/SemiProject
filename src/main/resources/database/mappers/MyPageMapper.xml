@@ -15,13 +15,19 @@
   		</select>
   		
   		<insert id="setFileJoin" parameterType="MyPageFileDTO"> <!-- 회원가입용으로 나중에 삭제 -->
+  		<selectKey keyProperty="fileNo" resultType="Long" order="BEFORE">
+	  		SELECT PROFILE_SEQ.NEXTVAL FROM DUAL
+  		</selectKey>
   		INSERT INTO PROFILE 
-  		VALUES (PROFILE_SEQ.NEXTVAL, #{userNo}, #{originalFileName}, #{fileName})
+  		VALUES (#{fileNo}, #{userNo}, #{originalFileName}, #{fileName})
 	  	</insert>
 	  
 	  	<insert id="setJoin" parameterType="MemberDTO"> <!-- 회원가입용으로 나중에 삭제 -->
+	  	<selectKey keyProperty="userNo" resultType="Long" order="BEFORE">
+	  		SELECT MEMBER_SEQ.NEXTVAL FROM DUAL
+  		</selectKey>
 	  		INSERT INTO MEMBER (USERNO, USERID, USERPW, NAME, EMAIL, BIRTH, ADDRESS, PHONE, ACCOUNTDATE, INTRO, STATUSNO)
-	  		VALUES (MEMBER_SEQ.NEXTVAL, #{userId}, #{userPw}, #{name}, #{email}, #{birth}, #{address}, #{phone}, sysdate, #{intro}, null)
+	  		VALUES (#{userNo}, #{userId}, #{userPw}, #{name}, #{email}, #{birth}, #{address}, #{phone}, sysdate, #{intro}, null)
 	  	</insert>
   
   </mapper>

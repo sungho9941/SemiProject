@@ -30,9 +30,8 @@ public class MyPageController {
 	
 	@RequestMapping(value = "join", method = RequestMethod.POST)
 	public String setJoin(MemberDTO memberDTO, MultipartFile pic, HttpSession session) throws Exception{
-		System.out.println("cont");
-		System.out.println(memberDTO);
-		System.out.println(pic);
+		
+		
 		int result = myPageService.setJoin(memberDTO, pic, session);
 		
 		return "redirect:../";
@@ -44,14 +43,14 @@ public class MyPageController {
 	}
 	
 	@RequestMapping(value = "login", method = RequestMethod.POST) //로그인 테스트용으로 나중에 삭제
-	public String getLogin(MemberDTO myPageDTO, HttpSession session) throws Exception{
-		myPageDTO = myPageService.getLogin(myPageDTO);
-		
-		if(myPageDTO != null) {
-			session.setAttribute("member", myPageDTO);
-			System.out.println(myPageDTO.getUserId()+"---");
-			System.out.println(myPageDTO.getUserPw()+"---");
+	public String getLogin(MemberDTO memberDTO, HttpSession session) throws Exception{
+		memberDTO = myPageService.getLogin(memberDTO);
+		if(memberDTO != null) {
 			
+			session.setAttribute("member", memberDTO);
+			System.out.println(memberDTO.getUserId()+"---");
+			System.out.println(memberDTO.getUserPw()+"---");
+			System.out.println(memberDTO.getMyPageFileDTO()+"---");
 		}
 		
 		return "redirect:/";
@@ -66,8 +65,18 @@ public class MyPageController {
 		return "../views/home";
 	}
 	
-	@GetMapping(value = "mypage")
-	public void myPage(MemberDTO myPageDTO) throws Exception{
+	@GetMapping(value = "mypage") //마이페이지
+	public void myPage(MemberDTO memberDTO) throws Exception{
+	
+	}
+	
+	@GetMapping(value = "update") //정보수정
+	public void update(MemberDTO memberDTO) throws Exception{
+		
+	}
+	
+	@GetMapping(value = "list") // 내판매글/구매내역
+	public void list(MemberDTO myPageDTO) throws Exception{
 		
 	}
 }
