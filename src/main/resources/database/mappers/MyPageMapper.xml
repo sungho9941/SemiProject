@@ -6,9 +6,37 @@
  
   <mapper namespace="com.semi.main.my.MyPageDAO">
   		
-  		<select id="getLogin" parameterType="MemberDTO" resultType="MemberDTO"><!-- 임시 로그인용으로 나중에 삭제 -->
-  			select * from member where userid=#{userId} and userpw=#{userPw}
+  		<select id="getLogin" parameterType="MemberDTO" resultMap="getLoginResult"><!-- 임시 로그인용으로 나중에 삭제 -->
+  			<!-- select * from member where userid=#{userId} and userpw=#{userPw} -->
+  			
+  			select * 
+  			from member m 
+  			left outer join
+  			profile p
+  			on m.userno = p.userno
+  			where userid=#{userId} and userpw=#{userPw}
   		</select>
+  		
+  		<resultMap id="getLoginResult" type="MemberDTO">
+			<id column="USERNO" property="userNo" />
+			<result column="userid" property="userId" />
+			<result column="userpw" property="userPw" />
+			<result column="name" property="name" />
+			<result column="email" property="email" />
+			<result column="birth" property="birth" />
+			<result column="address" property="address" />
+			<result column="phone" property="phone" />
+			<result column="accountdate" property="accountDate" />
+			<result column="intro" property="intro" />
+			<result column="statusNo" property="statusNo" />
+			
+			<association property="myPageFileDTO" javaType="MyPageFileDTO">
+				<id column="fileNo" property="fileNo" />
+				<result column="fileName" property="fileName" />
+				<result column="originalFileName" property="originalFileName" />
+			</association>
+		</resultMap>
+  		
   		
   		<select id="getList" resultType="MemberDTO"> <!-- 리스트 테스트 출력용으로 나중에 삭제 -->
   			select * from member

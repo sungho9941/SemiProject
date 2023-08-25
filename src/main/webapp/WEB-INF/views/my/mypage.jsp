@@ -52,39 +52,28 @@
 	</div>
 	
 	<div id="section">
-		<p>${member.userId} 님</p>
-		
+	<p>마이페이지</p>
 		<p>
-			<img alt="" src="../resources/upload/member/${member.myPageFileDTO.fileName}"> 
+			<img alt="" src="../resources/upload/member/${member.myPageFileDTO.fileName}" onerror="this.onerror-null; this.src='../resources/images/imgtest.jpeg';">
 		</p>
 		
-		<p text-align="left">자기소개</p>
-		<p>${member.intro}</p>	
 	</div>
 	
 	<div id="section">
+		<p>${member.userId} 님</p>
+		
+		<p>자기소개</p>
+		<p>${member.intro}</p>	
+		
 		<p>판매횟수 : </p>
-	</div>
-	<div id="section">
 		<p>구매횟수 : </p>
 	</div>
+	
+	
 	
 	<div id="footer">
 		<h2>FOOTER</h2>
 	</div>
     
-		<p>zzz</p>
-		
-		<p>
-			<img alt="" src="../resources/upload/member/${member.myPageFileDTO.fileName}"> 
-		</p>
-		
-		<p>
-			<img alt="" src="../resources/upload/member/${member.myPageFileDTO.originalFileName}"> 
-		</p>
-		
-		<p>
-			<img alt="" src="../resources/upload/member/0cb08601-c0a8-4863-b66e-d41349a2cc2d_img1.jpg">
-		</p>
 </body>
 </html>

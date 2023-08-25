@@ -48,9 +48,8 @@ public class MyPageController {
 		if(memberDTO != null) {
 			
 			session.setAttribute("member", memberDTO);
-			System.out.println(memberDTO.getUserId()+"---");
-			System.out.println(memberDTO.getUserPw()+"---");
-			System.out.println(memberDTO.getMyPageFileDTO()+"---");
+			
+			
 		}
 		
 		return "redirect:/";
