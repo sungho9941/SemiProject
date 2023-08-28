@@ -13,9 +13,34 @@ public class MemberDTO {
 	private String address;
 	private String phone;
 	private Date accountDate;
+//	08/21? 컬럼 추가
 	private String intro;
 	private MyPageFileDTO myPageFileDTO;
+//	08/28 주소컬럼 추가
+	private Long zipCode;
+	private String refAddress;
+	private String DetailAddress;
 	
+	
+	
+	public Long getZipCode() {
+		return zipCode;
+	}
+	public void setZipCode(Long zipCode) {
+		this.zipCode = zipCode;
+	}
+	public String getRefAddress() {
+		return refAddress;
+	}
+	public void setRefAddress(String refAddress) {
+		this.refAddress = refAddress;
+	}
+	public String getDetailAddress() {
+		return DetailAddress;
+	}
+	public void setDetailAddress(String detailAddress) {
+		DetailAddress = detailAddress;
+	}
 	public MyPageFileDTO getMyPageFileDTO() {
 		return myPageFileDTO;
 	}

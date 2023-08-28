@@ -57,5 +57,14 @@
 	  		INSERT INTO MEMBER (USERNO, USERID, USERPW, NAME, EMAIL, BIRTH, ADDRESS, PHONE, ACCOUNTDATE, INTRO, STATUSNO)
 	  		VALUES (#{userNo}, #{userId}, #{userPw}, #{name}, #{email}, #{birth}, #{address}, #{phone}, sysdate, #{intro}, null)
 	  	</insert>
+	  	
+	  	<!-- 회원수정 -->
+  	<update id="setMemberUpdate" parameterType="MemberDTO">
+  		UPDATE MEMBER SET
+  		userpw=#{userPw}, NAME=#{name}, EMAIL=#{email}, BIRTH=#{birth}, 
+  		zipcode=#{zipCode}, address=#{address}, refaddress=#{refAddress}, 
+  		detailaddress=#{detailAddress}, phone=#{phone}, intro=#{intro}
+  		WHERE userid=#{userId}
+  	</update>
   
   </mapper>

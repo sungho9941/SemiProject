@@ -54,4 +54,8 @@ public class MyPageService {
 	public List<MemberDTO> getList(MemberDTO myPageDTO) throws Exception{ //삭제예정
 		return myPageDAO.getList(myPageDTO);
 	}
+	
+	public int setMemberUpdate(MemberDTO memberDTO) throws Exception{ //회원수정 메서드
+		return myPageDAO.setMemberUpdate(memberDTO);
+	}
 }

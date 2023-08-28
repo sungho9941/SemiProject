@@ -74,6 +74,19 @@ public class MyPageController {
 		
 	}
 	
+	@RequestMapping(value = "update", method = RequestMethod.POST)
+	public String setMemberUpdate(MemberDTO memberDTO, HttpSession session) throws Exception{
+		MemberDTO sessionMember = (MemberDTO)session.getAttribute("member");
+		memberDTO.setUserId(sessionMember.getUserId());
+		
+		int result = myPageService.setMemberUpdate(memberDTO);
+		if(result>0) {
+			session.setAttribute("member", memberDTO);
+		}
+		
+		return "redirect:./mypage";
+	}
+	
 	@GetMapping(value = "list") // 내판매글/구매내역
 	public void list(MemberDTO myPageDTO) throws Exception{
 		

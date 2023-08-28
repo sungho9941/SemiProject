@@ -16,16 +16,11 @@ public class MyPageDAO {
 	
 	
 	public int setFileJoin(MyPageFileDTO myPageFileDTO) throws Exception{ //회원가입(사진등록)용으로 나중에 삭제
-		
-		
-		
+	
 		return sqlSession.insert(NAMESPACE+"setFileJoin", myPageFileDTO);
 	}
 	
 	public int setJoin(MemberDTO memberDTO) throws Exception{ //회원가입용으로 나중에 삭제
-		
-		
-		
 		
 		return sqlSession.insert(NAMESPACE+"setJoin", memberDTO);
 	}
@@ -40,5 +35,9 @@ public class MyPageDAO {
 	public List<MemberDTO> getList(MemberDTO myPageDTO) throws Exception{ //회원 리스트 출력 테스트로 나중에 삭제
 		
 		return sqlSession.selectList(NAMESPACE+"getList", myPageDTO);
+	}
+	
+	public int setMemberUpdate(MemberDTO memberDTO) throws Exception{ // 회원수정 메서드
+		return sqlSession.update(NAMESPACE+"setMemberUpdate", memberDTO);
 	}
 }
