@@ -13,7 +13,7 @@
 		#nav {
 			background-color:green;
 			color:white;
-			width:200px;
+			width:250px;
 			height:700px;
 			float:left;
 		}
@@ -44,10 +44,11 @@
 		
 		<ul>
 		<li><a href="./mypage">마이페이지</a></li><br><br>
-		  <li><a href="./update">정보수정</a></li><br><br>
+		  <li><a href="./check">정보수정</a></li><br><br>
 		  <li><a href="./list">내판매글/구매내역/후기</a></li><br><br>
 		  <li>내 찜 목록</li><br><br>
 		  <li>택배조회</li><br><br>
+		  <li><a href="./list">상품관리</a></li><br><br>
 		  <li><a href="delete">회원탈퇴</a></li>
 		</ul>
 	</div>

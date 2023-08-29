@@ -55,23 +55,15 @@
 		</ul>
 	</div>
 	
-	<div id="section">
-	<p>마이페이지</p>
-		<p>
-			<img alt="" src="../resources/upload/member/${member.myPageFileDTO.fileName}" onerror="this.onerror-null; this.src='../resources/images/imgtest.jpeg';" width="200"; height="300">
-		</p>
-		
-	</div>
 	
+	<form action="./check" method="post" id="frm">
 	<div id="section">
-		<p>${member.userId} 님</p>
-		<p>${member.email}</p>
-		
-		<p>자기소개 : ${member.intro}</p>
-		
-		<p>판매횟수 : </p>
-		<p>구매횟수 : </p>
+		비밀번호 입력
+		<input type="password" name="userPw" class="form-control" id="userPw" placeholder="pw를 입력하세요">
+		<button type="button" id="btn">확인</button>
 	</div>
+	</form>
+	
 	
 	
 	
@@ -79,5 +71,18 @@
 		<h2>FOOTER</h2>
 	</div>
     
+    <script>
+    let btn = document.getElementById("btn");
+    let frm = document.getElementById("frm");
+    let userPw = document.getElementById("userPw");
+    
+  	btn.addEventListener("click", function(){
+  		console.log("click");
+  		
+  		console.log(userPw.value);
+  		
+  		frm.submit();
+  	})
+    </script>
 </body>
 </html>

@@ -67,6 +67,17 @@ public class MyPageService {
 		String fileName = fileManager.fileSave(path, session, file); // -> fileName ------> insert 해야됨
 		
 		
+//		-------
+		MemberDTO mem = (MemberDTO)session.getAttribute("member");
+		Long userNo = mem.getUserNo();
+		MyPageFileDTO myPageFileDTO = new MyPageFileDTO();
+		myPageFileDTO.setFileName(fileName);
+		myPageFileDTO.setUserNo(userNo);
+		myPageFileDTO.setOriginalFileName(file.getOriginalFilename());
+		int result = myPageDAO.setFileJoin(myPageFileDTO);
+//		--------
+		
+		
 		return path+fileName; // -5. 선택한 이미지가 실제로 존재하는 경로를 반환 -
 	}
 	
@@ -86,7 +97,5 @@ public class MyPageService {
 		return myPageDAO.setDelete(memberDTO);
 	}
 	
-//	public List<MemberDTO> getMyList(MemberDTO memberDTO) throws Exception{ //내가 쓴 글(나중에 수정해야됨)
-//		return myPageDAO.getMyList(memberDTO);
-//	}
+
 }

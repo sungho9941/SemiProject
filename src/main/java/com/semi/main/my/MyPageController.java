@@ -47,10 +47,7 @@ public class MyPageController {
 	public String getLogin(MemberDTO memberDTO, HttpSession session) throws Exception{
 		memberDTO = myPageService.getLogin(memberDTO);
 		if(memberDTO != null) {
-			
 			session.setAttribute("member", memberDTO);
-			
-			
 		}
 		
 		return "redirect:/";
@@ -66,8 +63,8 @@ public class MyPageController {
 	}
 	
 	@GetMapping(value = "mypage") //마이페이지
-	public void myPage(MemberDTO memberDTO) throws Exception{
-	
+	public void myPage() throws Exception{
+		
 	}
 	
 	@GetMapping(value = "update") //정보수정
@@ -144,11 +141,29 @@ public class MyPageController {
 		return "commons/result";
 	}
 	
-//	@GetMapping("list")
-//	public void getMyList(Model model, HttpSession session) throws Exception{ //?
-//		MemberDTO memberDTO = (MemberDTO)session.getAttribute("member");
-//		List<MemberDTO> ar1 = myPageService.getMyList(memberDTO);
-//		model.addAttribute("member", ar1);
-//		
-//	}
+
+	
+	@GetMapping("check") //정보수정창
+	public void check() throws Exception{
+		
+	}
+	
+	@PostMapping("check") //정보수정창
+	public String check(MemberDTO memberDTO, HttpSession session, Model model) throws Exception{
+		MemberDTO mem = (MemberDTO)session.getAttribute("member");
+		String sessionPass = mem.getUserPw();
+		String pass = memberDTO.getUserPw();
+		
+		System.out.println(sessionPass+"sessionPass");
+		System.out.println(pass+"pass");
+		
+		if(!(sessionPass.equals(pass))) {
+			String message = "비밀번호를 다시 입력해주세요";
+			model.addAttribute("message", message);
+			model.addAttribute("url", "./check");	
+			return "commons/result";
+		} 
+		
+		return "./my/update";
+	}
 }
