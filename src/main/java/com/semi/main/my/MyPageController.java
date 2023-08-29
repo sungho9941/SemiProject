@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
@@ -78,7 +79,8 @@ public class MyPageController {
 	public String setMemberUpdate(MemberDTO memberDTO, HttpSession session) throws Exception{
 		MemberDTO sessionMember = (MemberDTO)session.getAttribute("member");
 		memberDTO.setUserId(sessionMember.getUserId());
-		
+
+
 		int result = myPageService.setMemberUpdate(memberDTO);
 		if(result>0) {
 			session.setAttribute("member", memberDTO);
@@ -91,4 +93,55 @@ public class MyPageController {
 	public void list(MemberDTO myPageDTO) throws Exception{
 		
 	}
+	
+	@PostMapping("setContentsImgDelete")
+	public String setContentsImgDelete(String path, HttpSession session, Model model)throws Exception{
+		boolean check= myPageService.setContentsImgDelete(path, session);
+		model.addAttribute("result", check);
+		return "commons/ajaxResult";
+	}
+	
+	// 4. AJAX로 넘긴 파일 데이터를 처리
+	@PostMapping("setContentsImg")
+	public String setContentsImg(MultipartFile file, HttpSession session, Model model)throws Exception{
+		String path = myPageService.setContentsImg(file, session);
+		model.addAttribute("result", path);
+		return "commons/ajaxResult";
+		
+	}
+	
+	@GetMapping("fileDelete")
+	public String setFileDelete(MyPageFileDTO myPageFileDTO, HttpSession session ,Model model)throws Exception{
+		int result = myPageService.setFileDelete(myPageFileDTO, session);
+		model.addAttribute("result", result);
+		return "commons/ajaxResult";
+		
+	}
+	
+	@GetMapping("delete")
+	public void setDelete(MemberDTO memberDTO) throws Exception{ //회원탈퇴
+
+	}
+	
+	@PostMapping("delete")
+	public String setDelete(MemberDTO memberDTO, HttpSession session, Model model) throws Exception{ //회원탈퇴
+		MemberDTO mem = (MemberDTO)session.getAttribute("member");
+		String sessionPass = mem.getUserPw();
+		String pass = memberDTO.getUserPw();
+		
+		String message = "탈퇴 성공하셨습니다";
+		if(!(sessionPass.equals(pass))) {
+			message = "비밀번호를 다시 입력해주세요";
+			model.addAttribute("message", message);
+			model.addAttribute("url", "./delete");	
+		} else {
+		model.addAttribute("message", message);
+		model.addAttribute("url", "../");	
+		myPageService.setDelete(memberDTO);
+		session.invalidate();
+		}
+		
+		return "commons/result";
+	}
+	
 }

@@ -4,6 +4,7 @@
 
 <html>
 <head>
+
 	<title>회원수정</title>
 	<style>
 		#header {
@@ -43,23 +44,25 @@
 	<div id="nav">
 		
 		<ul>
+		<li><a href="./mypage">마이페이지</a></li><br><br>
 		  <li><a href="./update">정보수정</a></li><br><br>
-		  <li><a href="list">내판매글/구매내역</a></li><br><br>
+		  <li><a href="./list">내판매글/구매내역/후기</a></li><br><br>
 		  <li>내 찜 목록</li><br><br>
 		  <li>택배조회</li><br><br>
-		  <li>회원탈퇴</li>
+		  <li><a href="./delete">회원탈퇴</a></li>
 		</ul>
 	</div>
 	
+	<form action="./update" method="post" enctype="multipart/form-data">
 	<div id="section">
 	<p>정보수정페이지</p>
 		<p>
-			<img alt="" src="../resources/upload/member/${member.myPageFileDTO.fileName}" onerror="this.onerror-null; this.src='../resources/images/imgtest.jpeg';">
+			<img alt="" id="profile" src="../resources/upload/member/${member.myPageFileDTO.fileName}" onerror="this.onerror-null; this.src='../resources/images/imgtest.jpeg';">
 		</p>
-		<input type="file" value="${member.myPageFileDTO.fileName}">
+		<input type="file" name="file" id="file">
 	</div>
 	
-	<form action="./update" method="post">
+	
 	<div id="section">
 		<br><br>
 		<p>이름</p>
@@ -69,7 +72,7 @@
 		<input type="password" id="pw" name="userPw" value="${member.userPw}">
 		<br>
 		<p>비밀번호 확인</p>
-		<input type="password"  value="${member.userPw}">
+		<input type="password" value="${member.userPw}">
 		<br>
 		<p>이메일</p>
 		<input type="email" name="email" value="${member.email}">
@@ -151,7 +154,46 @@
             }
         }).open();
     }
+    
 </script>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+	$("input:file").change(function(){ // -1. 다른 파일 선택 시 이 이벤트가 호출됨-
+		// -2. 선택학 파일 데이터를 가져옴-
+    	let formData = new FormData(); // <form></form>
+		formData.append("file", $("input:file")[0].files[0]); // <input type="file" name="file">
+    	
+		// -3. 가져온 파일 데이터를 컨트롤러 setContentsImg 메서드로 넘김 -
+		$.ajax({
+			type:"POST",
+			url:"./setContentsImg",
+			data:formData, // 가져온 파일 데이터 설정(파라미터로 넘어감)
+			enctype:"multipart/form-data",
+			cache:false,
+			contentType:false,
+			processData:false,
+			success:function(result){
+				$("#profile").attr("src", result);
+			}
+		});
+		
+		/*	
+			$.ajax({
+				type:'post',
+				url:'./setContentsImgDelete',
+				data:{
+					path:path
+				},
+				success:function(result){
+					console.log(result);
+				},
+				error:function(){
+					console.log("err");
+				}
+			});
+		*/
+  	});
+</script>
 </body>
 </html>

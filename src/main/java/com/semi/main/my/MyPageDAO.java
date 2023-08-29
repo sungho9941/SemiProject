@@ -37,7 +37,19 @@ public class MyPageDAO {
 		return sqlSession.selectList(NAMESPACE+"getList", myPageDTO);
 	}
 	
-	public int setMemberUpdate(MemberDTO memberDTO) throws Exception{ // 회원수정 메서드
+	public int setMemberUpdate(MemberDTO memberDTO) throws Exception{ // 회원수정
 		return sqlSession.update(NAMESPACE+"setMemberUpdate", memberDTO);
+	}
+	
+	public MyPageFileDTO getFileDetail(MyPageFileDTO myPageFileDTO)throws Exception{ // 사진수정쪽
+		return sqlSession.selectOne(NAMESPACE+"getFileDetail", myPageFileDTO);
+	}
+	
+	public int setFileDelete(MyPageFileDTO myPageFileDTO)throws Exception{ // 사진수정쪽
+		return sqlSession.delete(NAMESPACE+"setFileDelete", myPageFileDTO);
+	}
+	
+	public int setDelete(MemberDTO memberDTO) throws Exception{ // 회원탈퇴
+		return sqlSession.delete(NAMESPACE+"setDelete", memberDTO);
 	}
 }

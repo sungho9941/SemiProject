@@ -29,6 +29,11 @@
 			<result column="accountdate" property="accountDate" />
 			<result column="intro" property="intro" />
 			<result column="statusNo" property="statusNo" />
+			<!-- 08/28 추가 -->
+			<result column="zipcode" property="zipCode" />
+			<result column="refaddress" property="refAddress" />
+			<result column="detailaddress" property="detailAddress" />
+			
 			
 			<association property="myPageFileDTO" javaType="MyPageFileDTO">
 				<id column="fileNo" property="fileNo" />
@@ -67,4 +72,27 @@
   		WHERE userid=#{userId}
   	</update>
   
+  
+  	<!-- 회원 사진 관련 -->
+  	<delete id="setFileDelete" parameterType="MyPageFileDTO">
+		DELETE PROFILE WHERE FILENO=#{fileNo}
+	</delete>
+	
+	<select id="getFileDetail" parameterType="MyPageFileDTO" resultType="MyPageFileDTO">
+		SELECT FILENO, FILENAME FROM PROFILE WHERE FILENO=#{fileNo}
+	</select>
+	
+	
+	
+	<!-- 회원탈퇴 -->
+	<delete id="setDelete" parameterType="MemberDTO">
+		DELETE FROM MEMBER
+		WHERE USERID=#{userId} AND USERPW=#{userPw}
+	</delete>
+	
+	<!-- 내가 쓴 글 테스트 -->
+	<select id="getMyList" parameterType="MemberDTO">
+		select * from member where userId=#{userId}
+	</select>
+	
   </mapper>

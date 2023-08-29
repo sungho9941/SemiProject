@@ -48,33 +48,58 @@
 		  <li><a href="./list">내판매글/구매내역/후기</a></li><br><br>
 		  <li>내 찜 목록</li><br><br>
 		  <li>택배조회</li><br><br>
-		  <li><a href="./delete">회원탈퇴</a></li>
+		  <li><a href="delete">회원탈퇴</a></li>
 		</ul>
 	</div>
 	
 	<div id="section">
-	<p>마이페이지</p>
+	<p>회원탈퇴</p>
 		<p>
 			<img alt="" src="../resources/upload/member/${member.myPageFileDTO.fileName}" onerror="this.onerror-null; this.src='../resources/images/imgtest.jpeg';">
 		</p>
 		
 	</div>
-	
+	<form action="./delete" method="post" id="frm">
 	<div id="section">
 		<p>${member.userId} 님</p>
-		<p>${member.email}</p>
 		
-		<p>자기소개 : ${member.intro}</p>
-		
-		<p>판매횟수 : </p>
-		<p>구매횟수 : </p>
-	</div>
+			
+		 	<label for="userId" class="form-label">id</label>
+	 	 	<input type="text" name="userId" class="form-control" id="userId" value="${member.userId}" placeholder="id를 입력하세요">
+			
 	
+			
+		 	<label for="userPw" class="form-label">pw</label>
+	 	 	<input type="password" name="userPw" class="form-control" id="userPw" placeholder="pw를 입력하세요">
+		 	
+
+			<button class="btn btn-success" type="button" id="btn">회원탈퇴</button>
+	</div>
+	</form>
 	
 	
 	<div id="footer">
 		<h2>FOOTER</h2>
 	</div>
     
+    
+    <script>
+    	let btn = document.getElementById("btn");
+ 		let frm = document.getElementById("frm");
+ 		
+    	btn.addEventListener("click", function(){
+ 			removeMember();   		
+ 
+    	})
+		
+    	function removeMember() {
+    			if(window.confirm("정말 탈퇴하시겠습니까?")){
+    			location.href="./delete";
+    			frm.submit();
+    			}   			
+    		}
+	</script>
+
+
 </body>
 </html>
