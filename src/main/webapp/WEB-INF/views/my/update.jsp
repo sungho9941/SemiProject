@@ -57,7 +57,7 @@
 	<div id="section">
 	<p>정보수정페이지</p>
 		<p>
-			<img alt="" id="profile" src="../resources/upload/member/${member.myPageFileDTO.fileName}" onerror="this.onerror-null; this.src='../resources/images/imgtest.jpeg';">
+			<img alt="" id="profile" src="../resources/upload/member/${member.myPageFileDTO.fileName}" onerror="this.onerror-null; this.src='../resources/images/imgtest.jpeg';" width="200"; height="300">
 		</p>
 		<input type="file" name="file" id="file">
 	</div>

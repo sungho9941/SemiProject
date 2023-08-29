@@ -52,4 +52,8 @@ public class MyPageDAO {
 	public int setDelete(MemberDTO memberDTO) throws Exception{ // 회원탈퇴
 		return sqlSession.delete(NAMESPACE+"setDelete", memberDTO);
 	}
+	
+//	public List<MemberDTO> getMyList(MemberDTO memberDTO) throws Exception{ //내가 쓴 글(나중에 수정해야됨)
+//		return sqlSession.selectList(NAMESPACE+"getMyList", memberDTO);
+//	}
 }

@@ -53,7 +53,7 @@
 	</div>
 	
 	<div id="section">
-	<p>마이페이지</p>
+	<p>글목록</p>
 		<p>
 			<img alt="" src="../resources/upload/member/${member.myPageFileDTO.fileName}" onerror="this.onerror-null; this.src='../resources/images/imgtest.jpeg';">
 		</p>
@@ -63,6 +63,7 @@
 	
 	<div id="section">
 	<p>판매내역</p>
+	
 	</div>
 	
 	<div id="section">

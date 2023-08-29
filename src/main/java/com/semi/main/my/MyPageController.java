@@ -29,7 +29,7 @@ public class MyPageController {
 	}
 	
 	
-	@RequestMapping(value = "join", method = RequestMethod.POST)
+	@RequestMapping(value = "join", method = RequestMethod.POST)  // 회원가입 테스트용으로 나중에 삭제
 	public String setJoin(MemberDTO memberDTO, MultipartFile pic, HttpSession session) throws Exception{
 		
 		
@@ -56,7 +56,7 @@ public class MyPageController {
 		return "redirect:/";
 	}
 	
-	@RequestMapping(value = "test", method = RequestMethod.GET) //나중에 삭제
+	@RequestMapping(value = "test", method = RequestMethod.GET) //회원목록 출력 테스트 - 나중에 삭제
 	public String getList(MemberDTO myPageDTO, Model model) throws Exception{
 		List<MemberDTO> ar = myPageService.getList(myPageDTO);
 
@@ -90,8 +90,8 @@ public class MyPageController {
 	}
 	
 	@GetMapping(value = "list") // 내판매글/구매내역
-	public void list(MemberDTO myPageDTO) throws Exception{
-		
+	public String list(MemberDTO myPageDTO) throws Exception{
+		return "./my/list";
 	}
 	
 	@PostMapping("setContentsImgDelete")
@@ -144,4 +144,11 @@ public class MyPageController {
 		return "commons/result";
 	}
 	
+//	@GetMapping("list")
+//	public void getMyList(Model model, HttpSession session) throws Exception{ //?
+//		MemberDTO memberDTO = (MemberDTO)session.getAttribute("member");
+//		List<MemberDTO> ar1 = myPageService.getMyList(memberDTO);
+//		model.addAttribute("member", ar1);
+//		
+//	}
 }

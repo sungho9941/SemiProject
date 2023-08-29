@@ -31,19 +31,7 @@ public class MyPageService {
 		myPageFileDTO.setOriginalFileName(multipartFile.getOriginalFilename());
 		myPageFileDTO.setFileName(fileName);
 		result = myPageDAO.setFileJoin(myPageFileDTO);
-		
-		
-		System.out.println(myPageFileDTO.getUserNo()+"=1");
-		System.out.println(myPageFileDTO.getFileName()+"=2");
-		System.out.println(myPageFileDTO.getOriginalFileName()+"=3");
-		System.out.println(myPageFileDTO.getFileNo()+"=4");
-		System.out.println(memberDTO.getUserNo()+"=5");
-		System.out.println(memberDTO.getName()+"=6");
-		System.out.println(memberDTO.getPhone()+"=7");
-		System.out.println(memberDTO.getUserId()+"=8");
-		
 		}
-		
 		
 		return result;
 	}
@@ -62,7 +50,7 @@ public class MyPageService {
 	
 
 
-	
+
 	public boolean setContentsImgDelete(String path, HttpSession session)throws Exception{
 		//path: /resources/upload/notice/파일명
 		FileDTO fileDTO = new FileDTO();
@@ -91,11 +79,14 @@ public class MyPageService {
 			//db 삭제
 			return myPageDAO.setFileDelete(myPageFileDTO);
 		}
-		
 		return 0;
 	}
 	
 	public int setDelete(MemberDTO memberDTO) throws Exception{ //회원탈퇴
 		return myPageDAO.setDelete(memberDTO);
 	}
+	
+//	public List<MemberDTO> getMyList(MemberDTO memberDTO) throws Exception{ //내가 쓴 글(나중에 수정해야됨)
+//		return myPageDAO.getMyList(memberDTO);
+//	}
 }
