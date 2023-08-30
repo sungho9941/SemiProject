@@ -15,7 +15,7 @@ public class MyPageDAO {
 	private final String NAMESPACE="com.semi.main.my.MyPageDAO.";
 	
 	
-	public int setFileJoin(MyPageFileDTO myPageFileDTO) throws Exception{ //회원가입(사진등록)용으로 나중에 삭제
+	public int setFileJoin(MyPageFileDTO myPageFileDTO) throws Exception{ //사진등록
 	
 		return sqlSession.insert(NAMESPACE+"setFileJoin", myPageFileDTO);
 	}
@@ -32,22 +32,22 @@ public class MyPageDAO {
 		return sqlSession.selectOne(NAMESPACE+"getLogin", myPageDTO);
 	}
 	
-	public List<MemberDTO> getList(MemberDTO myPageDTO) throws Exception{ //회원 리스트 출력 테스트로 나중에 삭제
-		
-		return sqlSession.selectList(NAMESPACE+"getList", myPageDTO);
-	}
+//	public List<MemberDTO> getList(MemberDTO myPageDTO) throws Exception{ //회원 리스트 출력 테스트로 나중에 삭제
+//		
+//		return sqlSession.selectList(NAMESPACE+"getList", myPageDTO);
+//	}
 	
 	public int setMemberUpdate(MemberDTO memberDTO) throws Exception{ // 회원수정
 		return sqlSession.update(NAMESPACE+"setMemberUpdate", memberDTO);
 	}
 	
-	public MyPageFileDTO getFileDetail(MyPageFileDTO myPageFileDTO)throws Exception{ // 사진수정쪽
-		return sqlSession.selectOne(NAMESPACE+"getFileDetail", myPageFileDTO);
-	}
-	
-	public int setFileDelete(MyPageFileDTO myPageFileDTO)throws Exception{ // 사진수정쪽
-		return sqlSession.delete(NAMESPACE+"setFileDelete", myPageFileDTO);
-	}
+//	public MyPageFileDTO getFileDetail(MyPageFileDTO myPageFileDTO)throws Exception{ // 사진수정쪽
+//		return sqlSession.selectOne(NAMESPACE+"getFileDetail", myPageFileDTO);
+//	}
+//	
+//	public int setFileDelete(MyPageFileDTO myPageFileDTO)throws Exception{ // 사진수정쪽
+//		return sqlSession.delete(NAMESPACE+"setFileDelete", myPageFileDTO);
+//	}
 	
 	public int setDelete(MemberDTO memberDTO) throws Exception{ // 회원탈퇴
 		return sqlSession.delete(NAMESPACE+"setDelete", memberDTO);

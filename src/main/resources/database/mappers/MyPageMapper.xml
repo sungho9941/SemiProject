@@ -47,7 +47,7 @@
   			select * from member
   		</select>
   		
-  		<insert id="setFileJoin" parameterType="MyPageFileDTO"> <!-- 회원가입용으로 나중에 삭제 -->
+  		<insert id="setFileJoin" parameterType="MyPageFileDTO"> <!-- 사진 수정용 -->
   		<selectKey keyProperty="fileNo" resultType="Long" order="BEFORE">
 	  		SELECT PROFILE_SEQ.NEXTVAL FROM DUAL
   		</selectKey>
@@ -73,14 +73,14 @@
   	</update>
   
   
-  	<!-- 회원 사진 관련 -->
+  	<!-- 
   	<delete id="setFileDelete" parameterType="MyPageFileDTO">
 		DELETE PROFILE WHERE FILENO=#{fileNo}
 	</delete>
 	
 	<select id="getFileDetail" parameterType="MyPageFileDTO" resultType="MyPageFileDTO">
 		SELECT FILENO, FILENAME FROM PROFILE WHERE FILENO=#{fileNo}
-	</select>
+	</select> -->
 	
 	
 	

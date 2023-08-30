@@ -40,9 +40,9 @@ public class MyPageService {
 		return myPageDAO.getLogin(myPageDTO);
 	}
 	
-	public List<MemberDTO> getList(MemberDTO myPageDTO) throws Exception{ //삭제예정
-		return myPageDAO.getList(myPageDTO);
-	}
+//	public List<MemberDTO> getList(MemberDTO myPageDTO) throws Exception{ //삭제예정
+//		return myPageDAO.getList(myPageDTO);
+//	}
 	
 	public int setMemberUpdate(MemberDTO memberDTO) throws Exception{ //회원수정 메서드
 		return myPageDAO.setMemberUpdate(memberDTO);
@@ -51,20 +51,21 @@ public class MyPageService {
 
 
 
-	public boolean setContentsImgDelete(String path, HttpSession session)throws Exception{
-		//path: /resources/upload/notice/파일명
-		FileDTO fileDTO = new FileDTO();
-		System.out.println(path.substring(path.lastIndexOf("/")+1));
-		fileDTO.setFileName(path.substring(path.lastIndexOf("/")+1));
-		
-		//path = path.substring(0, path.lastIndexOf("\\")+1);
-		path= "/resources/upload/member/";
-		return fileManager.fileDelete(fileDTO, path, session);
-	}
+//	public boolean setContentsImgDelete(String path, HttpSession session)throws Exception{
+//		//path: /resources/upload/notice/파일명
+//		FileDTO fileDTO = new FileDTO();
+//		System.out.println(path.substring(path.lastIndexOf("/")+1));
+//		fileDTO.setFileName(path.substring(path.lastIndexOf("/")+1));
+//		
+//		//path = path.substring(0, path.lastIndexOf("\\")+1);
+//		path= "/resources/upload/member/";
+//		return fileManager.fileDelete(fileDTO, path, session);
+//	}
 	
 	public String setContentsImg(MultipartFile file, HttpSession session) throws Exception {
 		String path="/resources/upload/member/";
 		String fileName = fileManager.fileSave(path, session, file); // -> fileName ------> insert 해야됨
+		session.setAttribute("newFileName", fileName);
 		
 		
 //		-------
@@ -81,17 +82,17 @@ public class MyPageService {
 		return path+fileName; // -5. 선택한 이미지가 실제로 존재하는 경로를 반환 -
 	}
 	
-	public int setFileDelete(MyPageFileDTO myPageFileDTO, HttpSession session)throws Exception{
-		//폴더 파일 삭제
-		myPageFileDTO = myPageDAO.getFileDetail(myPageFileDTO);
-		boolean flag = fileManager.fileDelete(myPageFileDTO, "/resources/upload/member/", session);
-		
-		if(flag) {
-			//db 삭제
-			return myPageDAO.setFileDelete(myPageFileDTO);
-		}
-		return 0;
-	}
+//	public int setFileDelete(MyPageFileDTO myPageFileDTO, HttpSession session)throws Exception{
+//		//폴더 파일 삭제
+//		myPageFileDTO = myPageDAO.getFileDetail(myPageFileDTO);
+//		boolean flag = fileManager.fileDelete(myPageFileDTO, "/resources/upload/member/", session);
+//		
+//		if(flag) {
+//			//db 삭제
+//			return myPageDAO.setFileDelete(myPageFileDTO);
+//		}
+//		return 0;
+//	}
 	
 	public int setDelete(MemberDTO memberDTO) throws Exception{ //회원탈퇴
 		return myPageDAO.setDelete(memberDTO);

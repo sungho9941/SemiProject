@@ -48,16 +48,13 @@
 		  <li><a href="./list">내판매글/구매내역/후기</a></li><br><br>
 		  <li>내 찜 목록</li><br><br>
 		  <li>택배조회</li><br><br>
-		  <li><a href="./list">상품관리</a></li><br><br>
+		  <li><a href="./management">상품관리</a></li><br><br>
 		  <li><a href="delete">회원탈퇴</a></li>
 		</ul>
 	</div>
 	
 	<div id="section">
 	<p>회원탈퇴</p>
-		<p>
-			<img alt="" src="../resources/upload/member/${member.myPageFileDTO.fileName}" onerror="this.onerror-null; this.src='../resources/images/imgtest.jpeg';">
-		</p>
 		
 	</div>
 	<form action="./delete" method="post" id="frm">
