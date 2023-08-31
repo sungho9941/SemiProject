@@ -39,7 +39,6 @@ public class MyPageController {
 		
 		return "redirect:/";
 	}
-	
 
 	
 	@GetMapping(value = "mypage") //마이페이지
@@ -54,10 +53,10 @@ public class MyPageController {
 	
 	@RequestMapping(value = "update", method = RequestMethod.POST)
 	public String setMemberUpdate(MyPageDTO myPageDTO, MultipartFile file,HttpSession session) throws Exception{
-		MyPageDTO memberDTO2 = (MyPageDTO)session.getAttribute("member"); //기존 멤버 정보
+		MyPageDTO myPageDTO2 = (MyPageDTO)session.getAttribute("member"); //기존 멤버 정보
 		
 		String userId = ((MyPageDTO)session.getAttribute("member")).getUserId(); 
-		myPageDTO.setUserNo(memberDTO2.getUserNo());
+		myPageDTO.setUserNo(myPageDTO2.getUserNo());
 		myPageDTO.setUserId(userId);
 		
 		int result = myPageService.setMemberUpdate(myPageDTO);
