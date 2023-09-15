@@ -146,7 +146,7 @@
 		SELECT * FROM PRODUCT P
 		LEFT JOIN PAYMENT p2 ON (P.PRONO=P2.PRONO) LEFT JOIN PRODUCTIMAGE p3 
 		ON P.PRONO = p3.PRONO 
-		WHERE P.USERNO=#{userNo}
+		WHERE P.USERNO=#{userNo} AND p2.PAYMENTNO IS NOT NULL
     </select>
     
     <resultMap id="SaleResult"   type="SaleDTO">
@@ -159,6 +159,8 @@
     	<result property="proNo" column="PRONO"/>
     	<result property="paymentDate" column="PAYMENTDATE"/>
     	<result property="proPrice" column="PROPRICE"/>
+    	<result property="paymentNo" column="PAYMENTNO"/>
+    	
     	
     	 <collection property="fileDTOs" javaType="List" ofType="ProductFileDTO">
         	<id column="FILENO" property="fileNo"/>
@@ -207,7 +209,7 @@
 			LEFT JOIN PAYMENT p2 ON (P.PRONO=P2.PRONO) 
 			LEFT JOIN PRODUCTIMAGE p3
 			ON P.PRONO = p3.PRONO
-			WHERE P.USERNO=#{userNo} 
+			WHERE P.USERNO=#{userNo} AND p2.PAYMENTNO IS NOT null
 		</select>
 
   </mapper>
