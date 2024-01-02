@@ -89,3 +89,8 @@
 
 ![상품결제](https://github.com/sungho9941/SemiProject/assets/26131124/99f4a235-37f8-47f9-9c92-aa976e501a3e)
 * Iamport API를 HttpsURLConnection으로 구현
+
+#### 1-7.신고
+
+![신고](https://github.com/sungho9941/SemiProject/assets/26131124/c79e1786-711e-46e2-8b37-49deda514be1)
+* 규칙을 위반한 판매자를 신고할 수 있고 최대 3장의 사진 등록 가능
