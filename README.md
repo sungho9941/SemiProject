@@ -74,3 +74,8 @@
 
 * 판매자가 등록한 상품 상세 설명이 있으며, 판매자 정보나 후기도 확인할 수 있음
 * 상품 관련 이미지를 최대 5개까지 등록할 수 있음
+
+#### 1-4.결제
+
+![상품결제](https://github.com/sungho9941/SemiProject/assets/26131124/99f4a235-37f8-47f9-9c92-aa976e501a3e)
+* Iamport API를 HttpsURLConnection으로 구현
