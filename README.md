@@ -122,3 +122,10 @@
 ![후기](https://github.com/sungho9941/SemiProject/assets/26131124/262fd759-cdc9-4a68-85c3-0d202b7e4812)
 
 * 내 상품을 구매한 사용자의 후기 글 목록 출력
+
+#### 1-10.상품 관리
+
+![상품관리](https://github.com/sungho9941/SemiProject/assets/26131124/656cda31-1f76-4985-aeb9-9f5c839139f0)
+
+* 내가 등록한 상품 목록 출력 및 상품 상세페이지 바로가기
+
