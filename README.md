@@ -94,3 +94,8 @@
 
 ![신고](https://github.com/sungho9941/SemiProject/assets/26131124/c79e1786-711e-46e2-8b37-49deda514be1)
 * 규칙을 위반한 판매자를 신고할 수 있고 최대 3장의 사진 등록 가능
+
+#### 1-8.구매내역&후기
+
+![구매내역후기](https://github.com/sungho9941/SemiProject/assets/26131124/c2abbb57-424e-4214-872b-302a1bf73545)
+* 로그인한 사용자의 구매내역과 판매내역을 확인할 수 있고 구매한 상품의 후기를 등록할 수 있음
