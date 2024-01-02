@@ -57,3 +57,7 @@
 #### 1-1.일반 회원가입
 
 ![회원가입](https://github.com/sungho9941/SemiProject/assets/26131124/751e9cea-b927-4f71-b6bf-ca9c57df1bd7)
+
+#### 1-2.카카오 회원가입
+
+![카카오회원가입](https://github.com/sungho9941/SemiProject/assets/26131124/b946a734-c0b9-4d96-9bf0-11df03b563a2)
