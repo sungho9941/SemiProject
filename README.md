@@ -119,6 +119,6 @@
 
 #### 1-10.내게 쓴 후기
 
-![후기](https://github.com/sungho9941/SemiProject/assets/26131124/773c24bb-5bf0-42e3-a790-59f537055179)
+![후기](https://github.com/sungho9941/SemiProject/assets/26131124/262fd759-cdc9-4a68-85c3-0d202b7e4812)
 
 * 내 상품을 구매한 사용자의 후기 글 목록 출력
