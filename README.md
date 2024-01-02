@@ -51,8 +51,9 @@
 <img src="https://img.shields.io/badge/Other-%23121011?style=for-the-badge"> ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white) ![Notion](https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=notion&logoColor=white) ![Slack](https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white) ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white) 
 
 
-⛳ 기능 구현
+## :rocket: <a id="function-implementation">기능 구현</a>
+### 1.일반
 
-1. 회원가입
-1-1.일반 회원가입
-https://github.com/sungho9941/SemiProject/assets/26131124/751e9cea-b927-4f71-b6bf-ca9c57df1bd7
+#### 1-1.일반 회원가입
+
+![회원가입](https://github.com/sungho9941/SemiProject/assets/26131124/751e9cea-b927-4f71-b6bf-ca9c57df1bd7)
