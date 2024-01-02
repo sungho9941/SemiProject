@@ -58,6 +58,12 @@
 
 ![회원가입](https://github.com/sungho9941/SemiProject/assets/26131124/751e9cea-b927-4f71-b6bf-ca9c57df1bd7)
 
+* 먼저 회원 가입을 진행해야 사이트 내 기능을 이용할 수 있다.
+  
 #### 1-2.카카오 회원가입
 
 ![카카오회원가입](https://github.com/sungho9941/SemiProject/assets/26131124/b946a734-c0b9-4d96-9bf0-11df03b563a2)
+
+* REST API중 HttpURLConnection을 사용하여 구현
+* 최초 로그인 시 이메일, 프로필 사진,닉네임 등을 가져올 수 있다
+* 실제로 사업자 등록을 하고 비즈 앱 신청을 해야만 유저의 다른 정보들을 가져올 수 있기에 현재는 이메일을 아이디로 써서 로그인
