@@ -88,7 +88,7 @@
 #### 1-6.결제
 
 ![상품결제](https://github.com/sungho9941/SemiProject/assets/26131124/99f4a235-37f8-47f9-9c92-aa976e501a3e)
-* Iamport API를 HttpsURLConnection으로 구현
+* PortOne API를 HttpsURLConnection으로 구현
 
 #### 1-7.신고
 
@@ -99,3 +99,9 @@
 
 ![구매내역후기](https://github.com/sungho9941/SemiProject/assets/26131124/c2abbb57-424e-4214-872b-302a1bf73545)
 * 로그인한 사용자의 구매내역과 판매내역을 확인할 수 있고 구매한 상품의 후기를 등록할 수 있음
+
+#### 1-8.결제취소
+
+![결제취소](https://github.com/sungho9941/SemiProject/assets/26131124/4aa982c2-4656-43e6-80aa-b876b78afc14)
+
+* PortOne 결재 API를 이용해 결제 취소
