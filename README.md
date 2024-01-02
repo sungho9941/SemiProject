@@ -71,6 +71,7 @@
 #### 1-3.프로필 사진 등록
 
 ![프로필사진등록](https://github.com/sungho9941/SemiProject/assets/26131124/ade66b5e-e59f-4721-88b2-1c8121812df7)
+
 * 사진 등록시 바로 확인이 가능하게끔 비동기 방식으로 구현
 
 #### 1-4.상품 등록
@@ -83,29 +84,41 @@
 #### 1-5.판매자 프로필 확인
 
 ![판매자프로필](https://github.com/sungho9941/SemiProject/assets/26131124/dfd0a883-67c7-462d-bcc0-4e16b4a1d7b1)
+
 * 판매자의 자기소개, 판매글, 별점등의 정보를 확인할 수 있음
 
 #### 1-6.결제
 
 ![상품결제](https://github.com/sungho9941/SemiProject/assets/26131124/99f4a235-37f8-47f9-9c92-aa976e501a3e)
+
 * PortOne API를 HttpsURLConnection으로 구현
 
 #### 1-7.신고
 
 ![신고](https://github.com/sungho9941/SemiProject/assets/26131124/c79e1786-711e-46e2-8b37-49deda514be1)
+
 * 규칙을 위반한 판매자를 신고할 수 있고 최대 3장의 사진 등록 가능
 
 #### 1-8.구매내역&후기
 
 ![구매내역후기](https://github.com/sungho9941/SemiProject/assets/26131124/c2abbb57-424e-4214-872b-302a1bf73545)
+
 * 로그인한 사용자의 구매내역과 판매내역을 확인할 수 있고 구매한 상품의 후기를 등록할 수 있음
 
 #### 1-8.결제취소
 
 ![결제취소](https://github.com/sungho9941/SemiProject/assets/26131124/4aa982c2-4656-43e6-80aa-b876b78afc14)
+
 * PortOne 결제 API를 이용해 결제 취소
 
 #### 1-9.내 찜목록
 
 ![내찜목록](https://github.com/sungho9941/SemiProject/assets/26131124/5339cef8-7a56-4485-8d26-2946ac4aad7f)
+
 * 상품상세페이지에서 찜한 목록 출력
+
+#### 1-10.내게 쓴 후기
+
+![후기](https://github.com/sungho9941/SemiProject/assets/26131124/773c24bb-5bf0-42e3-a790-59f537055179)
+
+* 내 상품을 구매한 사용자의 후기 글 목록 출력
